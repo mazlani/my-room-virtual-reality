@@ -1,5 +1,5 @@
-#ifndef MAGICVR_UTIL_COLOR_HPP
-#define MAGICVR_UTIL_COLOR_HPP
+#ifndef MYROOM_UTIL_COLOR_HPP
+#define MYROOM_UTIL_COLOR_HPP
 
 #include <OpenSG/OSGBaseTypes.h>
 #include <OpenSG/OSGSimpleMaterial.h>

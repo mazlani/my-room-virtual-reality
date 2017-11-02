@@ -1,5 +1,5 @@
-#ifndef MAGICVR_BEZIERCURVE_HPP
-#define MAGICVR_BEZIERCURVE_HPP
+#ifndef MYROOM_BEZIERCURVE_HPP
+#define MYROOM_BEZIERCURVE_HPP
 
 #include <OpenSG/OSGVector.h>
 
@@ -42,4 +42,4 @@ public:
 };
 
 
-#endif //MAGICVR_BEZIERCURVE_HPP
+#endif //MYROOM_BEZIERCURVE_HPP

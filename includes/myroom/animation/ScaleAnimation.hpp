@@ -2,8 +2,8 @@
 // Created by vr2017 on 28.09.17.
 //
 
-#ifndef MAGICVR_SCALEANIMATION_HPP
-#define MAGICVR_SCALEANIMATION_HPP
+#ifndef MYROOM_SCALEANIMATION_HPP
+#define MYROOM_SCALEANIMATION_HPP
 
 
 #include <OpenSG/OSGVector.h>
@@ -29,4 +29,4 @@ protected:
 };
 
 
-#endif //MAGICVR_SCALEANIMATION_HPP
+#endif //MYROOM_SCALEANIMATION_HPP

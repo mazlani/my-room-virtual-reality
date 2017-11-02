@@ -2,8 +2,8 @@
 // Created by vr2017 on 01.10.17.
 //
 
-#ifndef MAGICVR_BUBBLEANIMATION_HPP
-#define MAGICVR_BUBBLEANIMATION_HPP
+#ifndef MYROOM_BUBBLEANIMATION_HPP
+#define MYROOM_BUBBLEANIMATION_HPP
 
 
 #include <myroom/animation/ParallelAnimation.hpp>
@@ -36,4 +36,4 @@ public:
 };
 
 
-#endif //MAGICVR_BUBBLEANIMATION_HPP
+#endif //MYROOM_BUBBLEANIMATION_HPP

@@ -2,8 +2,8 @@
 // Created by vr2017 on 02.10.17.
 //
 
-#ifndef MAGICVR_PATHSETTINGS_HPP
-#define MAGICVR_PATHSETTINGS_HPP
+#ifndef MYROOM_PATHSETTINGS_HPP
+#define MYROOM_PATHSETTINGS_HPP
 
 #include <OpenSG/OSGGL.h>
 #include <OpenSG/OSGComponentTransform.h>
@@ -22,4 +22,4 @@ static const Char8 *Path_Skybox_Prefix = "/envMap_cube_";
 
 static const Char8 *Path_Skybox_Suffix = ".png";
 
-#endif //MAGICVR_PATHSETTINGS_HPP
+#endif //MYROOM_PATHSETTINGS_HPP

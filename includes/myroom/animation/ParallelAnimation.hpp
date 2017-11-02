@@ -1,5 +1,5 @@
-#ifndef MAGICVR_ANIMATIONS_HPP
-#define MAGICVR_ANIMATIONS_HPP
+#ifndef MYROOM_ANIMATIONS_HPP
+#define MYROOM_ANIMATIONS_HPP
 
 #include <vector>
 #include <memory>
@@ -34,4 +34,4 @@ public:
 };
 
 
-#endif //MAGICVR_ANIMATIONS_HPP
+#endif //MYROOM_ANIMATIONS_HPP

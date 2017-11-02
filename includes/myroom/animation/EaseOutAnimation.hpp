@@ -1,5 +1,5 @@
-#ifndef MAGICVR_EASEOUTANIMATION_HPP
-#define MAGICVR_EASEOUTANIMATION_HPP
+#ifndef MYROOM_EASEOUTANIMATION_HPP
+#define MYROOM_EASEOUTANIMATION_HPP
 
 
 #include "BezierAnimation.hpp"
@@ -10,4 +10,4 @@ public:
                      const std::shared_ptr<Animation> &animation);
 };
 
-#endif //MAGICVR_EASEOUTANIMATION_HPP
+#endif //MYROOM_EASEOUTANIMATION_HPP

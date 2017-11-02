@@ -1,5 +1,5 @@
-#ifndef MAGICVR_NODE_TRAJECTORY_NODE_HPP
-#define MAGICVR_NODE_TRAJECTORY_NODE_HPP
+#ifndef MYROOM_NODE_TRAJECTORY_NODE_HPP
+#define MYROOM_NODE_TRAJECTORY_NODE_HPP
 
 #include <OpenSG/OSGBaseTypes.h>
 #include <OpenSG/OSGNode.h>
@@ -21,4 +21,4 @@ namespace myroom { namespace node {
 
 }}
 
-#endif //MAGICVR_NODE_TRAJECTORY_NODE_HPP
+#endif //MYROOM_NODE_TRAJECTORY_NODE_HPP

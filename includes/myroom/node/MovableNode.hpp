@@ -1,5 +1,5 @@
-#ifndef MAGICVR_NODE_MOVABLE_NODE_HPP
-#define MAGICVR_NODE_MOVABLE_NODE_HPP
+#ifndef MYROOM_NODE_MOVABLE_NODE_HPP
+#define MYROOM_NODE_MOVABLE_NODE_HPP
 
 #include <OpenSG/OSGComponentTransform.h>
 #include <OpenSG/OSGNode.h>
@@ -23,4 +23,4 @@ namespace myroom { namespace node {
 
 }}
 
-#endif //MAGICVR_NODE_MOVABLE_NODE_HPP
+#endif //MYROOM_NODE_MOVABLE_NODE_HPP

@@ -1,5 +1,5 @@
-#ifndef MAGICVR_APPMODEL_HPP
-#define MAGICVR_APPMODEL_HPP
+#ifndef MYROOM_APPMODEL_HPP
+#define MYROOM_APPMODEL_HPP
 
 
 class AppModel {
@@ -7,4 +7,4 @@ class AppModel {
 };
 
 
-#endif //MAGICVR_APPMODEL_HPP
+#endif //MYROOM_APPMODEL_HPP

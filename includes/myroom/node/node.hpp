@@ -1,5 +1,5 @@
-#ifndef MAGICVR_NODE_NODE_HPP
-#define MAGICVR_NODE_NODE_HPP
+#ifndef MYROOM_NODE_NODE_HPP
+#define MYROOM_NODE_NODE_HPP
 
 #include <iterator>
 
@@ -30,4 +30,4 @@ namespace myroom { namespace node {
                 const OSG::MaterialRecPtr material = myroom::util::defaultMaterialColor());
 }}
 
-#endif //MAGICVR_NODE_NODE_HPP
+#endif //MYROOM_NODE_NODE_HPP

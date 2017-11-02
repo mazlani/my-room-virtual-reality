@@ -1,5 +1,5 @@
-#ifndef MAGICVR_ANIMATION_HPP
-#define MAGICVR_ANIMATION_HPP
+#ifndef MYROOM_ANIMATION_HPP
+#define MYROOM_ANIMATION_HPP
 
 #include <OpenSG/OSGTime.h>
 
@@ -15,4 +15,4 @@ public:
 };
 
 
-#endif //MAGICVR_ANIMATION_HPP
+#endif //MYROOM_ANIMATION_HPP

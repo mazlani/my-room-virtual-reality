@@ -1,5 +1,5 @@
-#ifndef MAGICVR_EASEANIMATION_HPP
-#define MAGICVR_EASEANIMATION_HPP
+#ifndef MYROOM_EASEANIMATION_HPP
+#define MYROOM_EASEANIMATION_HPP
 
 
 #include "BezierAnimation.hpp"
@@ -11,4 +11,4 @@ public:
 };
 
 
-#endif //MAGICVR_EASEANIMATION_HPP
+#endif //MYROOM_EASEANIMATION_HPP

@@ -1,5 +1,5 @@
-#ifndef MAGICVR_EXITGLUT_HPP
-#define MAGICVR_EXITGLUT_HPP
+#ifndef MYROOM_EXITGLUT_HPP
+#define MYROOM_EXITGLUT_HPP
 
 #include <stdexcept>
 
@@ -11,4 +11,4 @@ class ExitGlut : public std::exception {
 };
 
 
-#endif //MAGICVR_EXITGLUT_HPP
+#endif //MYROOM_EXITGLUT_HPP

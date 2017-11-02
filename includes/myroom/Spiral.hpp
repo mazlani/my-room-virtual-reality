@@ -1,5 +1,5 @@
-#ifndef MAGICVR_SPIRAL_HPP
-#define MAGICVR_SPIRAL_HPP
+#ifndef MYROOM_SPIRAL_HPP
+#define MYROOM_SPIRAL_HPP
 
 #include <vector>
 #include <OpenSG/OSGVector.h>
@@ -11,4 +11,4 @@ public:
 };
 
 
-#endif //MAGICVR_SPIRAL_HPP
+#endif //MYROOM_SPIRAL_HPP
