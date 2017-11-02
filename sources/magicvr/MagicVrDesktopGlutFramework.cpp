@@ -12,8 +12,8 @@ int MagicVrDesktopGlutFramework::createWindow() {
     mgr = OSG::SimpleSceneManager::create();
     mgr->setWindow(gwin);
     mgr->setRoot(root());
-    mgr->showAll();
-    mgr->setHeadlight(true);
+    //mgr->showAll();
+    mgr->setHeadlight(false);
     mgr->setBackground(loadBackground(SKYBOX_RES_1024)); // 256 | 512 | 1024 | 2048
     _navigator.simpleSceneManager(mgr);
     return winid;
