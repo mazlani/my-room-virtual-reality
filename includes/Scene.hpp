@@ -14,6 +14,8 @@ class Scene {
 
     void build();
 
+    void buildRoom(NodeRecPtr parent);
+
 public:
 
     Scene();
