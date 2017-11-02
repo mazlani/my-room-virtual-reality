@@ -1,4 +1,5 @@
 #include "magicvr/MagicVrDesktopGlutFramework.hpp"
+#include <magicvr/ComponentTransformNode.hpp>
 #include <OpenSG/OSGGLUTWindow.h>
 #include <magicvr/background.hpp>
 
@@ -20,7 +21,7 @@ int MagicVrDesktopGlutFramework::createWindow() {
 }
 
 OSG::Node *MagicVrDesktopGlutFramework::root() {
-    return app.root();
+    return _root;
 }
 
 void MagicVrDesktopGlutFramework::keyboardDown(unsigned char key, int x, int y) {
@@ -63,7 +64,13 @@ void MagicVrDesktopGlutFramework::display(OSG::Time dTime) {
 
 MagicVrDesktopGlutFramework::MagicVrDesktopGlutFramework(AppController &app)
         : app(app),
-          _navigator() {
+          _navigator(),
+         _root(
+                 ComponentTransformNode()
+                         .addChild(app.root())
+                         .translate(0, -170, -170)
+                         .node()
+         ){
     title("MagicVR");
 }
 

@@ -11,6 +11,7 @@ class MagicVrDesktopGlutFramework : public glutFramework::GlutFramework {
     OSG::SimpleSceneManagerRefPtr mgr; // gets created in createWindow
     AppController &app;
     magicvr::SimpleSceneManagerNavigator _navigator;
+    const OSG::NodeRecPtr _root;
 
 public:
     MagicVrDesktopGlutFramework(AppController &app);
