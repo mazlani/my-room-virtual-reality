@@ -12,6 +12,7 @@ OSG_USING_NAMESPACE
 
 /// 3D Assets
 static const Char8 *Path_Model_TableNew = "models/TableNew/TableNew/table.obj";
+static const Char8 *Path_Model_Chair = "models/chair/stul.obj";
 
 /// Skybox
 //static const Char8 *Path_Skybox_Root = "skybox/stonehenge_old/";

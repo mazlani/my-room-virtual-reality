@@ -1,5 +1,7 @@
 #include "Scene.hpp"
 #include <OpenSG/OSGSceneFileHandler.h>
+#include <OpenSG/OSGQuaternion.h>
+#include <OpenSG/OSGVector.h>
 #include <OpenSG/OSGMaterialGroup.h>
 #include <OpenSG/OSGImage.h>
 #include <OpenSG/OSGSimpleTexturedMaterial.h>
@@ -61,8 +63,21 @@ void Scene::build() {
     root()->addChild(pLightTransformNode);
     root()->addChild(
             ComponentTransformNode()
-                    .scale(140)
+                    .scale(120)
+                    .translate(-20,0,0)
                     .addChild(OSG::SceneFileHandler::the()->read(Path_Model_TableNew))
+                    .node()
+    );
+    root()->addChild(
+            ComponentTransformNode()
+                    .addChild(
+                            ComponentTransformNode()
+                                    .scale(0.07)
+                                    .addChild(OSG::SceneFileHandler::the()->read(Path_Model_Chair))
+                                    .node()
+                    )
+                    .translate(-20, 45, 0)
+                    .rotate(OSG::Quaternion(OSG::Vec3f(0, 0, -1), OSG::Vec3f(-1, 0, 0)))
                     .node()
     );
 }
