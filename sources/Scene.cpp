@@ -4,7 +4,7 @@
 #include <OpenSG/OSGImage.h>
 #include <OpenSG/OSGSimpleTexturedMaterial.h>
 #include <OpenSG/OSGSimpleGeometry.h>
-#include <magicvr/ComponentTransformNode.hpp>
+#include <myroom/ComponentTransformNode.hpp>
 #include <PathSettings.hpp>
 #include <OpenSG/OSGPointLight.h>
 #include <OpenSG/OSGSpotLight.h>

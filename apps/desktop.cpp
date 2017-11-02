@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <magicvr/ExitGlut.hpp>
-#include <magicvr/AppController.hpp>
-#include "magicvr/MagicVrDesktopGlutFramework.hpp"
+#include <myroom/ExitGlut.hpp>
+#include <myroom/AppController.hpp>
+#include "myroom/MagicVrDesktopGlutFramework.hpp"
 
 
 OSG_USING_NAMESPACE

@@ -17,14 +17,14 @@
 #include <OSGCSM/OSGCAVESceneManager.h>
 #include <OSGCSM/OSGCAVEConfig.h>
 #include <OSGCSM/appctrl.h>
-#include <magicvr/ExitGlut.hpp>
-#include <magicvr/background.hpp>
+#include <myroom/ExitGlut.hpp>
+#include <myroom/background.hpp>
 
 #include "Arguments.hpp"
-#include <magicvr/AppController.hpp>
-#include <magicvr/AppControllerWithWandSupport.hpp>
+#include <myroom/AppController.hpp>
+#include <myroom/AppControllerWithWandSupport.hpp>
 #include "input/RemoteManager.hpp"
-#include "magicvr/MagicVrCaveGlutFramework.hpp"
+#include "myroom/MagicVrCaveGlutFramework.hpp"
 
 OSG_USING_NAMESPACE
 
@@ -56,7 +56,7 @@ int main(int argc, char **argv) {
         }
 
         input::RemoteManager remoteManager(cfg);
-        magicvr::AppControllerWithWandSupport app(remoteManager);
+        myroom::AppControllerWithWandSupport app(remoteManager);
 
         MultiDisplayWindowRefPtr mwin = createAppWindow(cfg, cfg.getBroadcastaddress());
 

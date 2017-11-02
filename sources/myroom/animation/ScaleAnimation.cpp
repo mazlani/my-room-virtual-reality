@@ -1,0 +1,18 @@
+//
+// Created by vr2017 on 28.09.17.
+//
+
+#include <myroom/animation/FracTimeAnimation.hpp>
+#include "myroom/animation/ScaleAnimation.hpp"
+
+ScaleAnimation::ScaleAnimation(
+        const OSG::ComponentTransformRecPtr trans,
+        OSG::Vec3f destination,
+        OSG::Time duration, bool startOver) : FracTimeAnimation(duration, startOver), _trans(trans),
+                              _destination(destination),
+                              _start(trans->getScale()),
+                              _movement(_destination - _start) {}
+
+void ScaleAnimation::animateFracTime(OSG::Time fracTime) {
+    _trans->setScale(_start + _movement * fracTime);
+}
