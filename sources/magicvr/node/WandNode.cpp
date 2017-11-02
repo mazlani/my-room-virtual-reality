@@ -7,9 +7,6 @@ namespace magicvr { namespace node {
         const OSG::NodeRecPtr switchNode = OSG::makeNodeFor(_switch);
 
         switchNode->addChild(buildDefault());
-        switchNode->addChild(buildBubble(Path_Model_FireBubble));
-        switchNode->addChild(buildBubble(Path_Model_WaterBubble));
-        switchNode->addChild(buildBubble(Path_Model_ThunderBubble));
 
         showBulb(DEFAULT_BULB);
         _root = ComponentTransformNode()
