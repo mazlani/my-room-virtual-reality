@@ -71,7 +71,7 @@ MagicVrDesktopGlutFramework::MagicVrDesktopGlutFramework(AppController &app)
                          .translate(0, -170, -170)
                          .node()
          ){
-    title("MagicVR");
+    title("MyRoom");
 }
 
 void MagicVrDesktopGlutFramework::reshape(int width, int height) {

@@ -36,7 +36,7 @@ MagicVrCaveGlutFramework::MagicVrCaveGlutFramework(OSGCSM::CAVEConfig &cfg, OSGC
                                            DirectionalLightRecPtr mainLight)
         : cfg(cfg), mgr(mgr), remoteManager(remoteManager),
           app(app), mainLight(mainLight) {
-    title("MagicVR Control Window");
+    title("MyRoom Control Window");
 }
 
 void MagicVrCaveGlutFramework::reshape(int width, int height) {

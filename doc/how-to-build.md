@@ -74,7 +74,7 @@ environment variables and run *Tools > CMake > Reload CMake Project*.
 
 There are two CMake targets:
 
-### MagicVR_desktop  
+### MyRoom_desktop  
 
 Use this outside of the V2C (LRZ). Run
 
@@ -85,7 +85,7 @@ Use this outside of the V2C (LRZ). Run
 from the project root directory (has to be the working directory).
 Otherwise, the models are not found and you see only black objects.
 
-### MagicVR_cave
+### MyRoom_cave
 
 If you are in the V2C (LRZ) then run
 
