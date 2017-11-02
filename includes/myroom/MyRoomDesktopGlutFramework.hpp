@@ -7,14 +7,14 @@
 #include "SimpleSceneManagerNavigator.hpp"
 #include <OpenSG/OSGTime.h>
 
-class MagicVrDesktopGlutFramework : public glutFramework::GlutFramework {
+class MyRoomDesktopGlutFramework : public glutFramework::GlutFramework {
     OSG::SimpleSceneManagerRefPtr mgr; // gets created in createWindow
     AppController &app;
     myroom::SimpleSceneManagerNavigator _navigator;
     const OSG::NodeRecPtr _root;
 
 public:
-    MagicVrDesktopGlutFramework(AppController &app);
+    MyRoomDesktopGlutFramework(AppController &app);
 
     int createWindow() override;
 

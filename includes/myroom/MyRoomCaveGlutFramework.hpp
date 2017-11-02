@@ -7,7 +7,7 @@
 #include "GlutFramework.hpp"
 #include "input/RemoteManager.hpp"
 
-class MagicVrCaveGlutFramework : public glutFramework::GlutFramework {
+class MyRoomCaveGlutFramework : public glutFramework::GlutFramework {
     OSGCSM::CAVEConfig &cfg;
 
     OSGCSM::CAVESceneManager &mgr;
@@ -24,7 +24,7 @@ class MagicVrCaveGlutFramework : public glutFramework::GlutFramework {
     void clearControlWindow() const;
 
 public:
-    MagicVrCaveGlutFramework(OSGCSM::CAVEConfig &cfg, OSGCSM::CAVESceneManager &mgr,
+    MyRoomCaveGlutFramework(OSGCSM::CAVEConfig &cfg, OSGCSM::CAVESceneManager &mgr,
                          input::RemoteManager &remoteManager, AppController &app,
                          DirectionalLightRecPtr mainLight);
 

@@ -1,7 +1,7 @@
 #include <myroom/ExitGlut.hpp>
-#include "myroom/MagicVrCaveGlutFramework.hpp"
+#include "myroom/MyRoomCaveGlutFramework.hpp"
 
-void MagicVrCaveGlutFramework::keyboardDown(unsigned char key, int x, int y) {
+void MyRoomCaveGlutFramework::keyboardDown(unsigned char key, int x, int y) {
     glutFramework::GlutFramework::keyboardDown(key, x, y);
     app.keyboardDown(key, x, y);
     Real32 ed;
@@ -31,7 +31,7 @@ void MagicVrCaveGlutFramework::keyboardDown(unsigned char key, int x, int y) {
     }
 }
 
-MagicVrCaveGlutFramework::MagicVrCaveGlutFramework(OSGCSM::CAVEConfig &cfg, OSGCSM::CAVESceneManager &mgr,
+MyRoomCaveGlutFramework::MyRoomCaveGlutFramework(OSGCSM::CAVEConfig &cfg, OSGCSM::CAVESceneManager &mgr,
                                            input::RemoteManager &remoteManager, AppController &app,
                                            DirectionalLightRecPtr mainLight)
         : cfg(cfg), mgr(mgr), remoteManager(remoteManager),
@@ -39,12 +39,12 @@ MagicVrCaveGlutFramework::MagicVrCaveGlutFramework(OSGCSM::CAVEConfig &cfg, OSGC
     title("MyRoom Control Window");
 }
 
-void MagicVrCaveGlutFramework::reshape(int width, int height) {
+void MyRoomCaveGlutFramework::reshape(int width, int height) {
     mgr.resize(width, height);
     clearControlWindow();
 }
 
-void MagicVrCaveGlutFramework::idle() {
+void MyRoomCaveGlutFramework::idle() {
     glutFramework::GlutFramework::idle();
     remoteManager.check_tracker();
 
@@ -65,7 +65,7 @@ void MagicVrCaveGlutFramework::idle() {
     OSG::Thread::getCurrentChangeList()->clear();
 }
 
-void MagicVrCaveGlutFramework::display(OSG::Time dTime) {
+void MyRoomCaveGlutFramework::display(OSG::Time dTime) {
     app.display(dTime);
     commitChanges();
     mgr.idle();
@@ -74,13 +74,13 @@ void MagicVrCaveGlutFramework::display(OSG::Time dTime) {
     OSG::Thread::getCurrentChangeList()->clear();
 }
 
-int MagicVrCaveGlutFramework::createWindow() {
+int MyRoomCaveGlutFramework::createWindow() {
     const auto windowId = glutFramework::GlutFramework::createWindow();
     clearControlWindow();
     return windowId;
 }
 
-void MagicVrCaveGlutFramework::clearControlWindow() const {
+void MyRoomCaveGlutFramework::clearControlWindow() const {
     glClearColor(0.0, 0.0, 0.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
     glutSwapBuffers();

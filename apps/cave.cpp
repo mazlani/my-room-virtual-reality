@@ -24,7 +24,7 @@
 #include <myroom/AppController.hpp>
 #include <myroom/AppControllerWithWandSupport.hpp>
 #include "input/RemoteManager.hpp"
-#include "myroom/MagicVrCaveGlutFramework.hpp"
+#include "myroom/MyRoomCaveGlutFramework.hpp"
 
 OSG_USING_NAMESPACE
 
@@ -102,7 +102,7 @@ int main(int argc, char **argv) {
             mgr.setBackground(i, bg);
         }
 
-        MagicVrCaveGlutFramework framework(cfg, mgr, remoteManager, app, mainLight);
+        MyRoomCaveGlutFramework framework(cfg, mgr, remoteManager, app, mainLight);
         framework.startFramework(argc, argv);
     }
     catch (std::string e) {

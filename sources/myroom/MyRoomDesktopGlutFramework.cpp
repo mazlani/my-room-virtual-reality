@@ -1,11 +1,11 @@
-#include "myroom/MagicVrDesktopGlutFramework.hpp"
+#include "myroom/MyRoomDesktopGlutFramework.hpp"
 #include <myroom/ComponentTransformNode.hpp>
 #include <OpenSG/OSGGLUTWindow.h>
 #include <myroom/background.hpp>
 
 using namespace glutFramework;
 
-int MagicVrDesktopGlutFramework::createWindow() {
+int MyRoomDesktopGlutFramework::createWindow() {
     auto winid = GlutFramework::createWindow();
     OSG::GLUTWindowRecPtr gwin = OSG::GLUTWindowBase::create();
     gwin->setGlutId(winid);
@@ -20,24 +20,24 @@ int MagicVrDesktopGlutFramework::createWindow() {
     return winid;
 }
 
-OSG::Node *MagicVrDesktopGlutFramework::root() {
+OSG::Node *MyRoomDesktopGlutFramework::root() {
     return _root;
 }
 
-void MagicVrDesktopGlutFramework::keyboardDown(unsigned char key, int x, int y) {
+void MyRoomDesktopGlutFramework::keyboardDown(unsigned char key, int x, int y) {
     GlutFramework::keyboardDown(key, x, y);
     mgr->key(key, x, y);
     app.keyboardDown(key, x, y);
     _navigator.keyboardDown(key);
 }
 
-void MagicVrDesktopGlutFramework::keyboardUp(unsigned char key, int x, int y) {
+void MyRoomDesktopGlutFramework::keyboardUp(unsigned char key, int x, int y) {
     GlutFramework::keyboardUp(key, x, y);
     app.keyboardUp(key, x, y);
     _navigator.keyboardUp(key);
 }
 
-void MagicVrDesktopGlutFramework::mouseButtonPress(int button, int state, int x, int y) {
+void MyRoomDesktopGlutFramework::mouseButtonPress(int button, int state, int x, int y) {
     // react to mouse button presses
     if (state) {
         mgr->mouseButtonRelease(button, x, y);
@@ -47,12 +47,12 @@ void MagicVrDesktopGlutFramework::mouseButtonPress(int button, int state, int x,
     glutPostRedisplay();
 }
 
-void MagicVrDesktopGlutFramework::mouseMove(int x, int y) {
+void MyRoomDesktopGlutFramework::mouseMove(int x, int y) {
     mgr->mouseMove(x, y);
     glutPostRedisplay();
 }
 
-void MagicVrDesktopGlutFramework::display(OSG::Time dTime) {
+void MyRoomDesktopGlutFramework::display(OSG::Time dTime) {
     app.display(dTime);
     _navigator.update();
     commitChanges();
@@ -62,7 +62,7 @@ void MagicVrDesktopGlutFramework::display(OSG::Time dTime) {
     OSG::Thread::getCurrentChangeList()->clear();
 }
 
-MagicVrDesktopGlutFramework::MagicVrDesktopGlutFramework(AppController &app)
+MyRoomDesktopGlutFramework::MyRoomDesktopGlutFramework(AppController &app)
         : app(app),
           _navigator(),
          _root(
@@ -74,6 +74,6 @@ MagicVrDesktopGlutFramework::MagicVrDesktopGlutFramework(AppController &app)
     title("MyRoom");
 }
 
-void MagicVrDesktopGlutFramework::reshape(int width, int height) {
+void MyRoomDesktopGlutFramework::reshape(int width, int height) {
     mgr->resize(width, height);
 }

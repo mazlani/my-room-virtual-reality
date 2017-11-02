@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <myroom/ExitGlut.hpp>
 #include <myroom/AppController.hpp>
-#include "myroom/MagicVrDesktopGlutFramework.hpp"
+#include "myroom/MyRoomDesktopGlutFramework.hpp"
 
 
 OSG_USING_NAMESPACE
@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
 
     try {
         AppController app;
-        MagicVrDesktopGlutFramework framework(app);
+        MyRoomDesktopGlutFramework framework(app);
         framework.startFramework(argc, argv);
     } catch (const ExitGlut& e) {
         std::cout << "clean exit of app\n";
