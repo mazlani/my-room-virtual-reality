@@ -5,6 +5,7 @@
 #include <OpenSG/OSGSimpleTexturedMaterial.h>
 #include <OpenSG/OSGSimpleGeometry.h>
 #include <magicvr/ComponentTransformNode.hpp>
+#include <PathSettings.hpp>
 #include <OpenSG/OSGPointLight.h>
 #include <OpenSG/OSGSpotLight.h>
 #include <OpenSG/OSGSceneFileHandler.h>
@@ -58,6 +59,12 @@ void Scene::build() {
 
     buildRoom(root());
     root()->addChild(pLightTransformNode);
+    root()->addChild(
+            ComponentTransformNode()
+                    .scale(140)
+                    .addChild(OSG::SceneFileHandler::the()->read(Path_Model_TableNew))
+                    .node()
+    );
 }
 
 void Scene::buildRoom(NodeRecPtr parent) {

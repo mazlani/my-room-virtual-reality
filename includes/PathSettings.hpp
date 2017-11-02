@@ -17,6 +17,7 @@ static const Char8 *Path_Model_Lantern = "models/Lantern/Lantern.obj";
 static const Char8 *Path_Model_Kapelle = "models/Kapelle/Kapelle.obj";
 
 static const Char8 *Path_Model_Sockel = "models/Sockel/Sockel.obj";
+static const Char8 *Path_Model_TableNew = "models/TableNew/TableNew/table.obj";
 
 static const Char8 *Path_Model_FireBubble = "models/Bubbles/Bubble_Fire.obj";
 static const Char8 *Path_Model_WaterBubble = "models/Bubbles/Bubble_Water.obj";
