@@ -32,6 +32,9 @@ public:
     ComponentTransformNode _coffeeCup;
 
     ComponentTransformNode _coffeeMachine;
+
+    ComponentTransformNode _laptop;
+
 };
 
 

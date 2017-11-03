@@ -91,7 +91,7 @@ void Scene::build() {
     _movableObjects.addChild(_coffeeCup.node());
     OSG::setName(OSG::NodeRecPtr(_coffeeCup.node()), "CoffeeCup");
 
-    _movableObjects.addChild(
+/*    _movableObjects.addChild(
             ComponentTransformNode()
                     .addChild(
                             ComponentTransformNode()
@@ -102,7 +102,20 @@ void Scene::build() {
                     .translate(10,85,-30)
                     .rotate(OSG::Quaternion(OSG::Vec3f(-1, 0, 0), OSG::Vec3f(0, 0, -1)))
                     .node()
-    );
+    );*/
+
+    _laptop
+            .addChild(
+                    ComponentTransformNode()
+                            .scale(9)
+                            .addChild(OSG::SceneFileHandler::the()->read(Path_Model_Laptop))
+                            .node()
+            )
+            .translate(10,85,-30)
+            .rotate(OSG::Quaternion(OSG::Vec3f(-1, 0, 0), OSG::Vec3f(0, 0, -1)))
+            .node();
+    OSG::setName(OSG::NodeRecPtr(_laptop.node()), "Laptop");
+    _movableObjects.addChild(_laptop.node());
 
     root()->addChild(
             ComponentTransformNode()

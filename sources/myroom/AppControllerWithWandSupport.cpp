@@ -92,6 +92,9 @@ namespace myroom {
         } else if (_selectedObjectName == "CoffeeCup") {
             const auto oldPos = scene()._coffeeCup.trans()->getTranslation();
             scene()._coffeeCup.translate(oldPos + _wand.analog_values);
+        } else if (_selectedObjectName == "Laptop") {
+            const auto oldPos = scene()._laptop.trans()->getTranslation();
+            scene()._laptop.translate(oldPos + _wand.analog_values);
         }
     }
 
