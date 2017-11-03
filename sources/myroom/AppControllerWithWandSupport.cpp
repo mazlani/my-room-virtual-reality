@@ -43,7 +43,10 @@ namespace myroom {
         static bool _hasBeenSelectAction = false;
         const bool _isSelectAction = _wand.buttons[input::RemoteManager::MIDDLE];
         if (!_hasBeenSelectAction && _isSelectAction) {
-            OSG::Line l(_wand.wand.position, OSG::Vec3f(0, 0, -1)); // TODO
+            OSG::Vec3f wandDirection(0, 0, -1);
+            _wand.wand.orientation.multVec(wandDirection, wandDirection);
+            std::cout << "wand direction: " << wandDirection << std::endl;
+            OSG::Line l(_wand.wand.position, wandDirection);
 
             OSG::IntersectActionRefPtr act = OSG::IntersectAction::create();
 
