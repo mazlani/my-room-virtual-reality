@@ -4,6 +4,7 @@
 #include <OpenSG/OSGSimpleTexturedMaterialBase.h>
 #include <input/Tracker.hpp>
 #include <OpenSG/OSGIntersectAction.h>
+#include <OpenSG/OSGNameAttachment.h>
 
 namespace myroom {
     AppControllerWithWandSupport::AppControllerWithWandSupport(
@@ -28,6 +29,7 @@ namespace myroom {
             }
         }
         handleSelectObject();
+        moveSelectedObject(dTime);
         AppController::display(dTime);
         _hasBeenRecordingTrajectory = _isRecordingTrajectory;
     }
@@ -49,10 +51,24 @@ namespace myroom {
             act->apply(scene().movableObjects());
 
             if (act->didHit()) {
-                std::cerr << " object " << act->getHitObject()
+                const auto hitObject = act->getHitObject();
+                const auto hitObjectName = OSG::getName(hitObject);
+                std::cerr << " object " << hitObject
                           << " tri " << act->getHitTriangle()
                           << " at " << act->getHitPoint()
+                          << " name " << (hitObjectName == nullptr ? "unknown" : hitObjectName)
+                          << " core-type " << hitObject->getCore()->getTypeName()
                           << std::endl;
+                OSG::NodeRecPtr current = hitObject;
+                while (current != nullptr) {
+                    std::cout << "traverse parents: type=" << current->getTypeName()
+                              << " name=" << (OSG::getName(current) == nullptr ? "unknown" : OSG::getName(current))
+                              << std::endl;
+                    if (OSG::getName(current) != nullptr) {
+                        selectObjectByName(OSG::getName(current));
+                    }
+                    current = current->getParent();
+                }
             } else {
                 std::cerr << "Nothing hit" << std::endl;
             }
@@ -60,6 +76,20 @@ namespace myroom {
             OSG::commitChanges();
         }
         _hasBeenSelectAction = _isSelectAction;
+    }
+
+    void AppControllerWithWandSupport::selectObjectByName(std::string name) {
+        _selectedObjectName = name;
+    }
+
+    void AppControllerWithWandSupport::moveSelectedObject(Time dTime) {
+        if (_selectedObjectName == "CoffeeMachine") {
+            const auto oldPos = scene()._coffeeMachine.trans()->getTranslation();
+            scene()._coffeeMachine.translate(oldPos + _wand.analog_values);
+        } else if (_selectedObjectName == "CoffeeCup") {
+            const auto oldPos = scene()._coffeeCup.trans()->getTranslation();
+            scene()._coffeeCup.translate(oldPos + _wand.analog_values);
+        }
     }
 
 }

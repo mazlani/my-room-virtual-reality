@@ -13,6 +13,7 @@ namespace myroom {
         node::WandNode _wandNode;
         node::TrajectoryContainerNode _trajectoryNode;
         input::RemoteManager &_wand;
+        std::string _selectedObjectName;
 
     public:
         explicit AppControllerWithWandSupport(input::RemoteManager &wand);
@@ -22,6 +23,10 @@ namespace myroom {
         void keyboardDown(unsigned char key, int x, int y) override;
 
         void handleSelectObject();
+
+        void selectObjectByName(std::string name);
+
+        void moveSelectedObject(Time dTime);
     };
 }
 

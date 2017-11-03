@@ -14,6 +14,7 @@ class Scene {
     const NodeRecPtr _root;
 
     ComponentTransformNode _movableObjects;
+
     void build();
 
     void buildRoom(NodeRecPtr parent);
@@ -27,6 +28,10 @@ public:
     const NodeRecPtr &root() const;
 
     const NodeRecPtr movableObjects() const;
+
+    ComponentTransformNode _coffeeCup;
+
+    ComponentTransformNode _coffeeMachine;
 };
 
 

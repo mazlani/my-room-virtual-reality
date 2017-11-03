@@ -51,7 +51,7 @@ void MyRoomCaveGlutFramework::idle() {
     const auto speed = 1.f;
     auto head = remoteManager.head;
     mgr.setUserTransform(head.position, head.orientation);
-    mgr.setTranslation(mgr.getTranslation() + speed * remoteManager.analog_values);
+//    mgr.setTranslation(mgr.getTranslation() + speed * remoteManager.analog_values);
 
     // head light fix (2/3)
 //    Matrix4f mat;

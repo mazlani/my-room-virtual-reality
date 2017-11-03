@@ -11,6 +11,7 @@
 #include <OpenSG/OSGPointLight.h>
 #include <OpenSG/OSGSpotLight.h>
 #include <OpenSG/OSGSceneFileHandler.h>
+#include <OpenSG/OSGNameAttachment.h>
 
 void Scene::build() {
 
@@ -82,13 +83,14 @@ void Scene::build() {
                     .node()
     );
 
-    _movableObjects.addChild(
-            ComponentTransformNode()
-                    .scale(3)
-                    .translate(10,85.5,-60)
-                    .addChild(OSG::SceneFileHandler::the()->read(Path_Model_Coffee))
-                    .node()
-    );
+    const NodeRecPtr coffeeModel = OSG::SceneFileHandler::the()->read(Path_Model_Coffee);
+    _coffeeCup
+            .scale(3)
+            .translate(10,85.5,-60)
+            .addChild(coffeeModel);
+    _movableObjects.addChild(_coffeeCup.node());
+    OSG::setName(OSG::NodeRecPtr(_coffeeCup.node()), "CoffeeCup");
+
     _movableObjects.addChild(
             ComponentTransformNode()
                     .addChild(
@@ -110,18 +112,17 @@ void Scene::build() {
                     .node()
     );
 
-    _movableObjects.addChild(
-            ComponentTransformNode()
-                    .addChild(
-                            ComponentTransformNode()
-                                    .scale(13)
-                                    .addChild(OSG::SceneFileHandler::the()->read(Path_Model_CoffeeMachine))
-                                    .node()
-                    )
-                    .translate(60,85.3,-60)
-                    .rotate(OSG::Quaternion(OSG::Vec3f(-1, 0, 0), OSG::Vec3f(0, 0, -1)))
-                    .node()
-    );
+    _coffeeMachine
+            .addChild(
+                    ComponentTransformNode()
+                            .scale(13)
+                            .addChild(OSG::SceneFileHandler::the()->read(Path_Model_CoffeeMachine))
+                            .node()
+            )
+            .translate(60,85.3,-60)
+            .rotate(OSG::Quaternion(OSG::Vec3f(-1, 0, 0), OSG::Vec3f(0, 0, -1)));
+    OSG::setName(OSG::NodeRecPtr(_coffeeMachine.node()), "CoffeeMachine");
+    _movableObjects.addChild(_coffeeMachine.node());
 }
 
 void Scene::buildRoom(NodeRecPtr parent) {
