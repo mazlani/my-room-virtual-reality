@@ -178,3 +178,7 @@ Scene::Scene()
 const NodeRecPtr &Scene::root() const {
     return _root;
 }
+
+const NodeRecPtr Scene::movableObjects() const {
+    return _movableObjects.node();
+}

@@ -3,6 +3,7 @@
 #include <OpenSG/OSGSimpleTexturedMaterial.h>
 #include <OpenSG/OSGSimpleTexturedMaterialBase.h>
 #include <input/Tracker.hpp>
+#include <OpenSG/OSGIntersectAction.h>
 
 namespace myroom {
     AppControllerWithWandSupport::AppControllerWithWandSupport(
@@ -26,6 +27,7 @@ namespace myroom {
                 _trajectoryNode.clear();
             }
         }
+        handleSelectObject();
         AppController::display(dTime);
         _hasBeenRecordingTrajectory = _isRecordingTrajectory;
     }
@@ -33,6 +35,31 @@ namespace myroom {
     void AppControllerWithWandSupport::keyboardDown(unsigned char key, int x,
                                                     int y) {
         AppController::keyboardDown(key, x, y);
+    }
+
+    void AppControllerWithWandSupport::handleSelectObject() {
+        static bool _hasBeenSelectAction = false;
+        const bool _isSelectAction = _wand.buttons[input::RemoteManager::MIDDLE];
+        if (!_hasBeenSelectAction && _isSelectAction) {
+            OSG::Line l(_wand.wand.position, OSG::Vec3f(0, 0, -1)); // TODO
+
+            OSG::IntersectActionRefPtr act = OSG::IntersectAction::create();
+
+            act->setLine(l);
+            act->apply(scene().movableObjects());
+
+            if (act->didHit()) {
+                std::cerr << " object " << act->getHitObject()
+                          << " tri " << act->getHitTriangle()
+                          << " at " << act->getHitPoint()
+                          << std::endl;
+            } else {
+                std::cerr << "Nothing hit" << std::endl;
+            }
+
+            OSG::commitChanges();
+        }
+        _hasBeenSelectAction = _isSelectAction;
     }
 
 }

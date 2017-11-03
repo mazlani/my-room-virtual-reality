@@ -21,6 +21,7 @@ namespace myroom {
 
         void keyboardDown(unsigned char key, int x, int y) override;
 
+        void handleSelectObject();
     };
 }
 

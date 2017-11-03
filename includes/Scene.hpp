@@ -25,6 +25,8 @@ public:
     void update(OSG::Time dTime);
 
     const NodeRecPtr &root() const;
+
+    const NodeRecPtr movableObjects() const;
 };
 
 
