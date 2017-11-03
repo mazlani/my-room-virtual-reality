@@ -61,6 +61,7 @@ void Scene::build() {
 
     buildRoom(root());
     root()->addChild(pLightTransformNode);
+    root()->addChild(_movableObjects.node());
     root()->addChild(
             ComponentTransformNode()
                     .scale(120)
@@ -78,6 +79,47 @@ void Scene::build() {
                     )
                     .translate(-20, 45, 0)
                     .rotate(OSG::Quaternion(OSG::Vec3f(0, 0, -1), OSG::Vec3f(-1, 0, 0)))
+                    .node()
+    );
+
+    _movableObjects.addChild(
+            ComponentTransformNode()
+                    .scale(3)
+                    .translate(10,85.5,-60)
+                    .addChild(OSG::SceneFileHandler::the()->read(Path_Model_Coffee))
+                    .node()
+    );
+    _movableObjects.addChild(
+            ComponentTransformNode()
+                    .addChild(
+                            ComponentTransformNode()
+                                    .scale(9)
+                                    .addChild(OSG::SceneFileHandler::the()->read(Path_Model_Laptop))
+                                    .node()
+                    )
+                    .translate(10,85,-30)
+                    .rotate(OSG::Quaternion(OSG::Vec3f(-1, 0, 0), OSG::Vec3f(0, 0, -1)))
+                    .node()
+    );
+
+    root()->addChild(
+            ComponentTransformNode()
+                    .scale(0.7)
+                    .translate(10,160,-132)
+                    .addChild(OSG::SceneFileHandler::the()->read(Path_Model_Clock))
+                    .node()
+    );
+
+    _movableObjects.addChild(
+            ComponentTransformNode()
+                    .addChild(
+                            ComponentTransformNode()
+                                    .scale(13)
+                                    .addChild(OSG::SceneFileHandler::the()->read(Path_Model_CoffeeMachine))
+                                    .node()
+                    )
+                    .translate(60,85.3,-60)
+                    .rotate(OSG::Quaternion(OSG::Vec3f(-1, 0, 0), OSG::Vec3f(0, 0, -1)))
                     .node()
     );
 }

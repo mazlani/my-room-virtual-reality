@@ -6,12 +6,14 @@
 #include <OpenSG/OSGComponentTransform.h>
 #include <OpenSG/OSGComponentTransformBase.h>
 #include <OpenSG/OSGComponentTransformFields.h>
+#include "myroom/ComponentTransformNode.hpp"
 
 OSG_USING_NAMESPACE
 
 class Scene {
     const NodeRecPtr _root;
 
+    ComponentTransformNode _movableObjects;
     void build();
 
     void buildRoom(NodeRecPtr parent);
